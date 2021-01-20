@@ -1365,7 +1365,7 @@ struct UrlState {
 
   struct auth authhost;  /* auth details for host */
   struct auth authproxy; /* auth details for proxy */
-#ifdef CURLRES_ASYNCH
+#if defined(CURLRES_ASYNCH) || !defined(CURL_DISABLE_DOH)
   struct Curl_async async;  /* asynchronous name resolver data */
 #endif
 
